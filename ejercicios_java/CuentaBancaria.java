@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class CuentaBancaria {
     String titularCuenta = "";
     int balance = 0;
@@ -30,10 +32,30 @@ public class CuentaBancaria {
     }
 
     public static void main(String[] args){
-        CuentaBancaria miCuenta = new CuentaBancaria("Santiago", 400000);
-        int total = miCuenta.depositar(200000);
-        miCuenta.obtenerBalance();
-        total = miCuenta.retirar(180000);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el titular de la cuenta : ");
+        String titular1 = scanner.nextLine();
+        System.out.println("Ingrese el balance : ");
+        int balance1 = Integer.parseInt(scanner.nextLine());
+        System.out.println("Ingrese la operacion : ");
+        String operacion = scanner.nextLine();
+
+        CuentaBancaria miCuenta = new CuentaBancaria(titular1,balance1);
+        if(operacion.equals("deposito")){
+            System.out.println("ingrese el deposito : ");
+            int deposito1 = Integer.parseInt(scanner.nextLine());
+            int total = miCuenta.depositar(deposito1);
+        }
+        else if(operacion.equals("retiro")){
+            System.out.println("ingrese el valor de retiro : ");
+            int retiro1 = Integer.parseInt(scanner.nextLine());
+            int total = miCuenta.retirar(retiro1);
+        }
+        else{
+            System.out.println("operacion invalida");
+        }
+        
+        
         miCuenta.obtenerBalance();
 
 
