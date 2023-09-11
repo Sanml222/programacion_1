@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class Libro {
     /*
      * primero se declaran las variables
@@ -31,30 +33,15 @@ public class Libro {
     }
 
     public static void main(String[] args){ 
-        Libro libro1 = new Libro("100 años de soledad","Gabriel Garcia Marquez",173);
+        String nombre1 = JOptionPane.showInputDialog("ingresa el nombre del libro");
+        String autor1 = JOptionPane.showInputDialog("ingresa el nombre del autor");
+        int numPaginas1 = Integer.parseInt(JOptionPane.showInputDialog("ingresa el numero de paginas"));
+
+        Libro libro1 = new Libro(nombre1,autor1,numPaginas1);
         System.out.println(libro1.nombre);
         System.out.println(libro1.autor);
         System.out.println(libro1.numPaginas);
         System.out.println(libro1.resumen());
 
-        Libro libro2 = new Libro("El principito", 111);
-        System.out.println(libro2.nombre);
-        System.out.println(libro2.autor);
-        System.out.println(libro2.numPaginas);
-        System.out.println(libro2.resumen());
-
-
-
-
-
-}
-
-
-
-
-
-
- 
-
-
+    }
 }
